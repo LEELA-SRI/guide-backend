@@ -86,6 +86,7 @@ INSTALLED_APPS = [
     'storages',
     'whitenoise.runserver_nostatic',
     'verify_email',  # sending email verification
+    'rest_framework'
     # 'django_extensions',
 ]
 
@@ -124,18 +125,20 @@ WSGI_APPLICATION = 'guide_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-# Development
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'GUIDE-SELECTION',
-        'USER': 'techboizs',
-        'PASSWORD': 'AAd!tyAA$ravi',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+DATABASES ={
+    "default" : dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
+# Development
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'GUIDE-SELECTION',
+#         'USER': 'techboizs',
+#         'PASSWORD': 'AAd!tyAA$ravi',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 '''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',

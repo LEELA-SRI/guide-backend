@@ -1,6 +1,8 @@
 
 from django.urls import path
 from . import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 urlpatterns = [
     path('register', views.register, name='register'), 
     # For Faculties to register their account     
@@ -17,3 +19,4 @@ urlpatterns = [
          ),
 
 ]
+urlpatterns += staticfiles_urlpatterns()
